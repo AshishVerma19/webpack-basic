@@ -1,13 +1,32 @@
 const path = require('path');
+const TerserPlugin = require('terser-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+// add [contenthash] for browser cash
 module.exports = {
     entry:'./src',
     output: {
-        filename: 'bundle.js',
+        filename: 'bundle.[contenthash].js',
         path: path.resolve(__dirname,'./dist'),
-        publicPath: 'dist/'
+        publicPath: ''
     },
     mode: 'none',
+    plugins: [
+        new TerserPlugin(),
+        new MiniCssExtractPlugin({
+            filename: 'style.[contenthash].css'
+        }),
+        new CleanWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            title: 'webpack basic setup',
+            filename: 'index.html',
+            meta: {
+                viewport: 'width=device-width, initial-scale=1.0'
+            }
+        })
+    ],
     module: {
         rules: [
             {
@@ -30,7 +49,7 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [
-                    'style-loader', 'css-loader'
+                    MiniCssExtractPlugin.loader, 'css-loader'    //'style-loader', 'css-loader'
                 ]
             }
         ]
