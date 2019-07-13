@@ -1,0 +1,27 @@
+{
+  "name": "webpack-basic",
+  "version": "1.0.0",
+  "description": "Basic setup of webpack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AshishVerma19/webpack-basic.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AshishVerma19/webpack-basic/issues"
+  },
+  "homepage": "https://github.com/AshishVerma19/webpack-basic#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "file-loader": "^4.0.0",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.5"
+  }
+}
