@@ -20,7 +20,9 @@
   "homepage": "https://github.com/AshishVerma19/webpack-basic#readme",
   "dependencies": {},
   "devDependencies": {
+    "css-loader": "^3.0.0",
     "file-loader": "^4.0.0",
+    "style-loader": "^0.23.1",
     "webpack": "^4.35.3",
     "webpack-cli": "^3.3.5"
   }
